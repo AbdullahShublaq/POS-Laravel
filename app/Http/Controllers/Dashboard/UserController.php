@@ -30,7 +30,6 @@ class UserController extends Controller
     public function index(Request $request)
     {
         //
-        abort(403);
         $users = User::whereRoleIs('admin')->where(function ($query) use ($request) {
 
             $query->when($request->search, function ($q) use ($request) {
